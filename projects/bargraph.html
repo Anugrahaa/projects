@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head> <title> BAR GRAPH </title> </head>
+	<body>
+	<canvas id="graph" width="500" height="500" style="border:0px;">
+		your browser does not support the html5 canvas tag </canvas>
+		<br><br><br>
+	<input type="button" value="click to input value" id="b1"><br><br><br>    
+	<input type="button" value="sort" id="b2">
+	
+	<script>
+	//DRAW X AND Y AXES
+	var c=document.getElementById("graph");
+	var ctx = c.getContext("2d");
+	ctx.moveTo(0,500);
+	ctx.lineTo(500,500);//x axis
+	ctx.stroke(); //actually draws the line on canvas
+	ctx.moveTo(0,500);
+	ctx.lineTo(0,0);
+	ctx.stroke(); //y axis
+	
+	//on click of button to input
+	b1.onclick=inp;
+	//Array to store values
+	var ar = [];
+	var maxht = 0;
+	//variable to store next x-coordinate of rectangle
+	var b=20;
+	//function that draws bars on graph
+	function drawr(h,g)// h=ht g=position of bar
+	{	if(h==maxht)
+		{
+			ht=h;
+			h=450;
+		}
+		else
+		{
+			ht=h;
+			h=(h/maxht)*450;
+		}
+		//to draw black border for the rectangle
+		ctx.lineWidth=2;
+		ctx.strokeStyle="black";
+		ctx.strokeRect(g,500-h,20,h);
+		//to fill rectangle with blue colour
+		ctx.fillStyle="#9BC4E2";
+		ctx.fillRect(g, 500-h, 20, h);
+		ctx.stroke();
+		//to write value on rectangle
+		ctx.fillStyle="black";
+		ctx.font="8pt Arial";
+		ctx.fillText(ht,g+2,515-h);
+		return;
+	}
+	function inp(){
+	 //prompt box
+	 var w = prompt("Please enter the value", "");
+	 var isAnumber = /^[0-9]+$/;
+	 if(w.match(isAnumber)) 
+		{ar.push(w);//add entered value in array
+		 	if(parseInt(maxht)<parseInt(w))
+		 		{maxht=w;
+		 		ctx.clearRect(10,10,490,490);
+		 		b=20;
+		 		for(var z in ar)
+		 		{
+		 			drawr(ar[z],b);
+		 			b=b+40;
+		 		}
+		 }
+		 	else
+		 		{drawr(w,b);
+		 		b=b+40;//20 is the width of each bar and 20 is the distance between subsequent bars
+				}
+		}
+}
+	
+	//on click of button to sort
+	b2.onclick=ascsort;
+	
+	function ascsort(){
+	ar.sort(function(a, b){return a-b});// to sort numbers in array 
+	ctx.clearRect (10,10,490,490); // to clear previous drawings
+	var x=20;//position of bar
+	
+	for(var i=0; i<ar.length; i++)
+	{	var y = ar[i];//ht of bar
+		drawr(y,x);
+		x=x+40;
+	}
+}
+	
+	</script>
+	
+	</body>
+	</html>
+	

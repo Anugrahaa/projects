@@ -1,0 +1,46 @@
+<html>
+<head>
+	<title>
+		which device?
+	</title>
+	<style type="text/css">
+	.col-md-4{
+		border: solid 1px black;
+		padding: 5px;
+		margin: 3px;
+	}
+		/*for viewport less than 760px*/
+		@media(max-width: 800px){
+			body{
+				background-color: green;
+			}
+		}
+		/*for viewport of size greater than 760px*/
+		@media(min-width: 800px){
+			body
+			{
+				background-color: orange;
+			}
+			
+				
+		}
+		/*for viewport of size greater than 1200px*/
+		@media(min-width: 1200px){
+			body
+			{
+				background-color: yellow;
+			}
+			.row .col-md-4{
+				display: inline-table;
+				width:31%;
+		}
+	</style>
+</head>
+<body>
+	<div class = "row">
+		<div class = "col-md-4">div 1</div>
+		<div class = "col-md-4"> div 2</div>
+		<div class = "col-md-4">div 3</div>
+	</div>
+</body>
+</html>

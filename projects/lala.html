@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Random</title>
+	<style type="text/css">
+		.btn{
+			background-color: yellow;
+			color:green;
+			padding: 5px;
+			transition:background-color 2s,color 2s;
+		}
+		.btn:hover{
+			background-color: red;
+			color:white;
+		}
+		.bar{
+			width: 5px;
+			height: 100px;
+			background-color: red;
+			-webkit-animation: my_func 5s;
+			position: relative;
+			left: 100%;
+		}
+		@-webkit-keyframes my_func{
+			from{
+				left: 0%;
+				background-color:yellow;
+			}
+			70%{
+				left: 100%;
+				background-color:blue;
+				transform:rotate(900deg);
+			}
+			85%{
+				left:70%;
+				background-color:green;
+				transform:rotate(1300deg);
+			}
+			to{
+				left:100%;
+				background-color:red;
+				transform:rotate(1800deg);
+			}
+		}
+	</style>
+</head>
+<body>
+	<div class="bar"></div>
+	<button class = "btn">LOGIN</button>
+	<hr>
+	1.Transition
+	2.Keyframes
+	3.Transform
+	<hr>
+	<div>
+		<span>
+			This uses css3 animations-transitions, keyframes and transforms.<br>
+			This was done for fun and with the purpose of learning css3.<br>
+			Dated: May, 2015
+		</span>
+	</div>
+</body>
+</html>

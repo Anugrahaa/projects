@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head><title>bing (non-responsive)</title>
+		<style type="text/css">
+		.nav ul{
+			list-style:none;
+			background-color: black;
+			color: white;
+			padding: 5px;
+		}
+		.nav ul li{
+			display: inline;
+			padding: 5px;
+			cursor: pointer;
+		}
+		.nav ul li:hover{
+			opacity: 0.8;
+			cursor: pointer;
+		}
+		.nav ul li:active{
+			position: relative;
+			top:2px;
+		}
+		#img1:hover{
+			opacity: 0.8;
+			cursor: pointer;
+		}
+		#img1:active{
+			position: relative;
+			top:2px;
+		}
+		.search table{
+				position: relative;
+				top: 100px;
+				left: 200px;
+				color: white;
+				font-size: 25px;
+
+				}
+		
+		.place table {
+			position: absolute; 
+			bottom: 50px;
+			width:1350px;
+			color: white;
+			background-color: black;
+			opacity: 0.8;
+		}
+
+		.place table td {
+			padding-right:250px;
+		}
+
+		.txt{
+			font-size:12px;
+			position:relative;
+			top:-15px;
+		}
+		.place td h4,.txt:hover{
+			opacity: 0.8;
+			cursor: pointer;
+		}
+		.place td h4,.txt:active{
+			position: relative;
+			top:2px;
+		}
+		</style>
+
+
+	</head>
+<body style = "background-image: url(images.jpg); background-size: 100%;">
+	<div class ="nav">
+		<ul>
+			
+			<li style = "color:yellow;">Web</li>
+			<li>Images</li>
+			<li>Videos</li>
+			<li>Maps</li>
+			<li>News</li>
+			<li>More</li>
+			<li>Search History</li>
+			<li>MSN</li>
+			<li>Office online</li>
+			<li>Outlook.com</li>
+		</ul>
+		<ul style = "position: absolute; top: 0px; right: 0px">
+			<li>Sign in&nbsp;<img src = "signin.jpeg" height = "10"></li>
+			<li><img src="settings.png" height = "12"></li>
+		</ul>
+	</div>
+	<div class = "search">
+		<table>
+			<tr>
+				<td><img src="bing.png" height="40"></td>
+				<td><input type ="textbox" name ="search" style = "width:500px;border:0px;height:30px"/></td>
+				<td style = "position: relative; left:-34px; bottom: -4px;"><div id = "img1"><img src="search.png" width = "29px"  height = "29px"></div> </td>
+			</tr>
+
+		</table>
+	</div>
+	<div class = "place">
+		<table>
+			<tr>
+				<td><div class = "txt"><h2>A glowing coastline...</h2>Along a Portuguese island</div></td>
+				<td><div class = "txt"><h2>This place boasts of...</h2>...a world famous wine</div></td>
+				<td><div class = "txt"><h2>Popular Now</h2>India vs Bangladesh - Indian army operation</div></td>
+			</tr>
+		</table>
+	</div>
+	<table style = "position:absolute;bottom:0px;right:0px;background-color:black;"><tr><td width = "1350px" height = "30px"></td></tr></table>
+	<div class = "nav">
+		<ul style = "position: absolute; bottom: 0px; right: 0px; padding:0px">
+			<li>&copy;&nbsp;2015 Microsoft  |</li>
+			<li>Privacy and cookies  |</li>
+			<li>Legal  |</li>
+			<li>Advertise  |</li>
+			<li>Help  |</li>
+			<li>Feedback </li>
+		</ul>
+	 </div>
+
+
+
+
+</body>	
+</html>

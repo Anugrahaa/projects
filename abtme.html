@@ -1,0 +1,171 @@
+<html>
+<head>
+	<title>
+		About me
+	</title>
+	<style type="text/css">
+		body{
+			background-color: black;
+			overflow: hidden;
+		}
+		nav ul{
+			position: absolute;
+			top: 0px;
+			left: 0px;
+			width: 100%;
+			height: 30px;
+			background-color: grey;
+		}
+		nav ul li{
+			display: inline;
+			padding: 25px;
+			color: white;
+			font-size: 25px;
+			text-align: center;
+		}
+		nav ul li:hover{
+			cursor: pointer;
+			opacity: 0.8;
+		}
+		nav ul li:active{
+			color: yellow;
+			position: relative;
+			top: 2px;
+		}
+
+		section h1{
+			position: absolute;
+			top: 10%;
+			left: 45%;
+			color: white;
+			font-family: 'New rocker', cursive;
+		}
+
+		figure{
+			position: absolute;
+			top: 20%;
+			left: 0%;
+			width: 20%;
+			height: 50%;
+			border: 1px solid white;
+			-webkit-animation: pic_zoom 5s;
+			
+		}
+		img{
+			width: 100%;
+			height: 100%;
+		}
+
+		section p{
+			position: absolute;
+			top: 20%;
+			left: 25%;
+			right: 25%;
+			text-align: center;
+			font-family: cursive;
+			color: white;
+			padding: 15px;
+		}
+		a{
+			color: yellow;
+		}
+		footer{
+			position: absolute;
+			bottom: 10px;
+			left: 0px;
+			width: 100%;
+			color: white;
+			text-align: center;
+			background-color: grey;
+		}
+		@-webkit-keyframes pic_zoom{
+			from{
+				width:5% ;
+				height:12.5%;
+			}
+			to{
+				width:20%;
+				height: 50%;
+				transform: rotate(360deg);
+			}
+		}
+	
+		
+
+		@media(max-width:800px){
+			figure{
+			position: absolute;
+			top: 20%;
+			left: 0%;
+			width: 35%;
+			height: 50%;
+			border: 1px solid white;
+			-webkit-animation: pic_zoom1 5s;
+			
+		}
+		section p{
+			position: absolute;
+			top: 20%;
+			left: 40%;
+			right: 0%;
+			font-family: cursive;
+			color: white;
+			padding: 15px;
+		}
+
+
+		@-webkit-keyframes pic_zoom1{
+			from{
+				width:10%;
+				height:15%;
+			}
+			to{
+				width:35%;
+				height: 50%;
+				transform: rotate(360deg);
+			}
+		}
+
+		}
+
+	</style>
+	<script type="text/javascript">
+	function home () {
+			document.location="index.html";
+		}
+		function projects () {
+			document.location="projects.html";
+		}
+	</script>
+</head>
+<body>
+	<nav>
+		<ul>
+				<li onclick="home()">Home</li>
+				<li style="color: yellow;">About me</li>
+				<li onclick="projects()">Projects</li>
+		</ul>
+	</nav>
+	<section>
+		<h1>
+			About me
+		</h1>
+		<figure>
+			<img src="Anugrahaa.jpg">
+		</figure>
+		<p>
+			I am a passionate coder and web developer. <br><br>
+			Currently, I am pursuing second year of B. Tech. Computer Science and Engineering at NIT, Trichy.<br><br>
+			I am a voracious reader and I also love editing. <br><br>
+			<br>
+			You can download my CV from <a href="CV Anugrahaa.docx" target="_blank">here</a>
+		</p>
+	</section>
+
+	<footer>
+			<p>Made with &hearts; by Anugrahaa :)</p>
+	</footer>
+
+
+</body>
+</html>

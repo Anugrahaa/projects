@@ -1,0 +1,103 @@
+<html>
+<head>
+	<title>BOUNCING BALL</title>
+</head>
+<body>
+	<canvas id="bb" width="500" height="500">
+		does not support canvas
+	</canvas>
+	<input type="text" id="vx" placeholder="vel x axis">
+	<input type="text" id="vy" placeholder="vel y axis">
+	<button onclick="moveball()">DONE</button>
+
+	<script type="text/javascript">
+	var c=document.getElementById("bb");
+	var ctx=c.getContext("2d");
+	var x=100;
+	var y=100;
+	var vx=0;
+	var vy=0;
+	var g=10;
+	drawball();
+
+	function moveball () {
+		vx=parseInt(document.getElementById("vx").value);
+		vy=parseInt(document.getElementById("vy").value);
+			move_right();
+		
+	}
+
+	function drawball(){
+		
+		ctx.clearRect(0,0,500,500);
+		ctx.rect(0,0,500,500);
+		ctx.stroke();
+		
+		ctx.beginPath();
+		ctx.arc(x,y,20,0,2*Math.PI,true);
+		ctx.fillStyle = "red";
+		ctx.strokeStyle="white";
+		ctx.fill();
+	}
+
+	function move_right()
+	{	if(x<480)
+		{x+=vx*0.010;
+			if(vy>=0)
+				move_down();
+			else
+				move_up();
+			drawball();
+			setTimeout(move_right,10);
+		}
+		else{
+		vx=-vx/2;
+		move_left();}
+	}
+
+	function move_left()
+	{
+		if(x>0)
+			{x+=vx*10;
+				if(vy>=0)
+				move_down();
+			else
+				move_up();
+				drawball();
+				setTimeout(move_left,10);
+			}
+			else{vx=-vx/2;
+		move_right();}
+	}
+	function move_down()
+	{
+		if(y<480)
+		{
+			y+=(vy);
+			vy=(vy)+((g)*0.01);
+			console.log(vy);
+		}
+		else{
+			vy=-vy/2;
+			vx=vx/2;
+			//move_up();
+		}
+	}
+	function move_up(){
+		if(vy<0&&y>0)
+		{
+			y+=(vy);
+			vy=(vy)+(g*0.010);
+			console.log(vy);
+		}
+		else{
+			vy=-vy/2;
+			vx=vx/2;
+			//move_down();
+		}
+	}
+	</script>
+
+
+</body>
+</html>
